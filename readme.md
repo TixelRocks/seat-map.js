@@ -24,6 +24,8 @@ To initialise a seat map, pass a target and a venue to the `createSetMap` functi
 </script>
 ```
 
+Seat maps are hosted externally on S3 to make sure we aren't shipping all the seat map SVGs to the browser when they aren't needed.
+
 ## Highlight
 
 
