@@ -24,7 +24,7 @@ To initialise a seat map, pass a target and a venue to the `createSetMap` functi
 </script>
 ```
 
-Seat maps are hosted externally on S3 to make sure we aren't shipping all the seat map SVGs to the browser when they aren't needed.
+Seat maps are hosted externally on S3 to make sure we aren't shipping all the seat map SVGs to the browser when they aren't needed. All seat map SVGs are located in the `/maps` directory.
 
 ## Highlight
 
@@ -37,7 +37,28 @@ Seat maps are hosted externally on S3 to make sure we aren't shipping all the se
     })
 
     rodLaver.highlight(45)
+
+    someButton.addEventListener('click', function () {
+        rodLaver.highlight(12)
+    })
 </script>
 ```
 
 Although the seat map is rendered asynchronously, you can start highlighting sections right away. Once rendered, the last highlighted section will be active.
+
+## Clear highlighting
+
+You can clear active highlighting by calling `reset()` on the seat map.
+
+```html
+<script>
+    const rodLaver = seatMap.create({
+        target: '#seat-map',
+        venue: seatMap.venues.rodLaver,
+    })
+
+    rodLaver.highlight(45)
+
+    rodLaver.reset()
+</script>
+```
