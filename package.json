@@ -3,7 +3,7 @@
   "name": "seat-map.js",
   "version": "0.1.0",
   "description": "Interactive seat maps",
-  "main": "index.js",
+  "main": "src/seat-map.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TixelRocks/seat-map.js.git"

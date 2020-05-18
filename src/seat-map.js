@@ -25,9 +25,7 @@ const createSeatMap = (options) => {
             container.innerHTML = svg
             styleTag = container.querySelector(DYNAMIC_STYLES_SELECTOR)
             styleTemplate = styleTag.innerHTML
-            setTimeout(() => {
-                queue.start()
-            }, 10000)
+            queue.start()
         })
 
     const highlight = section => {
