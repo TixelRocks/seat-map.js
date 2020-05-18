@@ -1,6 +1,6 @@
 ## Import
 
-In the build system, import the `createSeatMap` factory function method and the `VENUES` object.
+In the build system, import the `createSeatMap` factory function method and the `VENUES` object which is just a key value pair of venue name.
 
 ```js
 import { createSeatMap, VENUES } from './seat-map'
@@ -27,7 +27,7 @@ To initialise a seat map, pass a target and a venue to the `createSetMap` functi
 ## Highlight
 
 
-```
+```html
 <script>
     const rodLaver = seatMap.create({
         target: '#seat-map',
