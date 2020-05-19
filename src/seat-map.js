@@ -1,9 +1,9 @@
 
 const DYNAMIC_STYLES_SELECTOR = '#seatmap-dynamic-styles'
 const ACTIVE_SECTION_IDENTIFIER = 'ACTIVE_SECTION_IDENTIFIER'
-const BASE_URL = 'https://public-uploads-production.tix.fm/seat-maps+'
+const BASE_URL = 'https://public-uploads-production.tix.fm/seat-maps'
 
-const VENUES = {
+const venues = {
     rodLaver: 'rod-laver'
 }
 
@@ -13,7 +13,7 @@ const createSeatMap = (options) => {
     let styleTag = document.createElement('style')
     const container = document.querySelector(options.target)
 
-    fetch(`${BASE_URL}/${options.venue}`)
+    fetch(`${BASE_URL}/${options.venue}.svg`)
         .then(response => {
             if (response.ok) {
                 return response.text()
@@ -98,8 +98,8 @@ const createQueue = () => {
     }
 }
 
-module.export = {
-    VENUES,
+export {
+    venues,
     createSeatMap,
 }
 
