@@ -13,6 +13,20 @@ const createSeatMap = (options) => {
     let styleTag = document.createElement('style')
     const container = document.querySelector(options.target)
 
+    const highlight = section => {
+        queue.push(() => {
+            const oldStyleTag = styleTag
+
+            styleTag = createStyleTag(styleTemplate, section)
+
+            oldStyleTag.replaceWith(styleTag)
+        })
+    }
+
+    const reset = () => {
+        highlight(null)
+    }
+
     fetch(`${BASE_URL}/${options.venue}.svg`)
         .then(response => {
             if (response.ok) {
@@ -27,20 +41,6 @@ const createSeatMap = (options) => {
             styleTemplate = styleTag.innerHTML
             queue.start()
         })
-
-    const highlight = section => {
-        queue.push(() => {
-            const oldStyleTag = styleTag
-
-            styleTag = createStyleTag(styleTemplate, section)
-
-            oldStyleTag.replaceWith(styleTag)
-        })
-    }
-
-    const reset = () => {
-        highlight(null)
-    }
 
     return {
         highlight,
