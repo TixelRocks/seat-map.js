@@ -27,7 +27,7 @@ const createSeatMap = (options) => {
         highlight(null)
     }
 
-    fetch(`${BASE_URL}/${options.venue}.svg`)
+    fetch(`${options.baseUrl || ''}/${options.venue}.svg`)
         .then(response => {
             if (response.ok) {
                 return response.text()

@@ -24,7 +24,6 @@ To initialise a seat map, pass a target and a venue to the `createSetMap` functi
 </script>
 ```
 
-Seat maps are hosted externally on S3 to make sure we aren't shipping all the seat map SVGs to the browser when they aren't needed. All seat map SVGs are located in the `/maps` directory.
 
 ## Highlight
 
@@ -73,5 +72,25 @@ You can clear active highlighting by calling `reset()` on the seat map.
     button.addEventListener('click', function () {
         rodLaver.reset()
     })
+</script>
+```
+
+## SVGs
+
+Seat maps can be hosted hosted anywhere - but note that you will need to configure CORS if they are on a different domain. All seat map SVGs are located in the `/maps` directory. You can publish the SVGs with Laravel Mix...
+
+```js
+mix.copy('node_modules/@tixelrocks/seat-map.js/maps/*', 'public/images/seat-maps')
+```
+
+Then pass the base URL when initialising the seat map.
+
+```blade
+<script>
+seatMapJS.create({
+    target: '#seat-map',
+    venue: seatMapJS.venues.rodLaver,
+    baseUrl: '{{ config('static_url') }}/images/seat-maps',
+})
 </script>
 ```
