@@ -1,7 +1,6 @@
 
 const DYNAMIC_STYLES_SELECTOR = '#seatmap-dynamic-styles'
 const ACTIVE_SECTION_IDENTIFIER = 'ACTIVE_SECTION_IDENTIFIER'
-const BASE_URL = 'https://public-uploads-production.tix.fm/seat-maps'
 
 const venues = {
     rodLaver: 'rod-laver'
@@ -27,7 +26,7 @@ const createSeatMap = (options) => {
         highlight(null)
     }
 
-    fetch(`${options.baseUrl || ''}/${options.venue}.svg`)
+    fetch(`${options.baseUrl || '/images/seat-maps'}/${options.venue}.svg`)
         .then(response => {
             if (response.ok) {
                 return response.text()
