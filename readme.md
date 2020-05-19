@@ -5,7 +5,7 @@ In the build system, import the `createSeatMap` factory function method and the 
 ```js
 import { createSeatMap, venues } from './seat-map'
 
-window.seatMap = {
+window.seatMapJS = {
     venues: venues,
     create: createSeatMap,
 }
@@ -17,9 +17,9 @@ To initialise a seat map, pass a target and a venue to the `createSetMap` functi
 
 ```html
 <script>
-    var rodLaver = seatMap.create({
+    seatMapJS.create({
         target: '#seat-map',
-        venue: seatMap.venues.rodLaver,
+        venue: seatMapJS.venues.rodLaver,
     })
 </script>
 ```
@@ -28,11 +28,23 @@ Seat maps are hosted externally on S3 to make sure we aren't shipping all the se
 
 ## Highlight
 
+A single highlighting...
+
 ```html
 <script>
-    var rodLaver = seatMap.create({
+    seatMapJS.create({
         target: '#seat-map',
-        venue: seatMap.venues.rodLaver,
+        venue: seatMapJS.venues.rodLaver,
+    }).highlight(45)
+</script>
+```
+
+Multiple highlight commands...
+```html
+<script>
+    var rodLaver = seatMapJS.create({
+        target: '#seat-map',
+        venue: seatMapJS.venues.rodLaver,
     })
 
     rodLaver.highlight(45)
@@ -51,13 +63,15 @@ You can clear active highlighting by calling `reset()` on the seat map.
 
 ```html
 <script>
-    var rodLaver = seatMap.create({
+    var rodLaver = seatMapJS.create({
         target: '#seat-map',
-        venue: seatMap.venues.rodLaver,
+        venue: seatMapJS.venues.rodLaver,
     })
 
     rodLaver.highlight(45)
 
-    rodLaver.reset()
+    button.addEventListener('click', function () {
+        rodLaver.reset()
+    })
 </script>
 ```
