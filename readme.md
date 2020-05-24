@@ -1,9 +1,15 @@
+## Installation
+
+```
+$ npm install @tixel/seat-map
+```
+
 ## Import
 
 In the build system, import the `createSeatMap` factory function method and the `venues` object which is just a key value pair of venue name.
 
 ```js
-import { createSeatMap, venues } from './seat-map'
+import { createSeatMap, venues } from '@tixel/seat-map'
 
 window.seatMapJS = {
     venues: venues,
@@ -80,7 +86,7 @@ You can clear active highlighting by calling `reset()` on the seat map.
 Seat maps can be hosted hosted anywhere - but note that you will need to configure CORS if they are on a different domain. All seat map SVGs are located in the `/maps` directory. You can publish the SVGs with Laravel Mix...
 
 ```js
-mix.copy('node_modules/@tixelrocks/seat-map.js/maps/*', 'public/images/seat-maps')
+mix.copy('node_modules/@tixel/seat-map/maps/*', 'public/images/seat-maps')
 ```
 
 Then pass the base URL when initialising the seat map.
