@@ -1,6 +1,5 @@
 {
-  "private": true,
-  "name": "seat-map.js",
+  "name": "seat-map",
   "version": "0.1.0",
   "description": "Interactive seat maps",
   "main": "src/seat-map.js",
@@ -8,7 +7,7 @@
     "type": "git",
     "url": "git+https://github.com/TixelRocks/seat-map.js.git"
   },
-  "license": "UNLICENSED",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/TixelRocks/seat-map.js/issues"
   },
