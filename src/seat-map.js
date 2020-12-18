@@ -6,95 +6,36 @@ const venues = {
     rodLaver: 'rod-laver'
 }
 
-const createSeatMap = (options) => {
-    let styleTemplate = ''
-    const queue = createQueue()
-    let styleTag = document.createElement('style')
-    const container = document.querySelector(options.target)
-
-    const highlight = section => {
-        queue.push(() => {
-            const oldStyleTag = styleTag
-
-            styleTag = createStyleTag(styleTemplate, section)
-
-            oldStyleTag.replaceWith(styleTag)
-        })
+const loadText = (url) => fetch(url) 
+  .then(response => {
+    if (response.ok) {
+        return response.text()
+    } else {
+      throw new Error(response.statusText)
     }
+  });
 
-    const reset = () => {
-        highlight(null)
-    }
+class SeatMap {
+  constructor(content, container) {
+    this.container = container;
+    this.container.innerHTML = content;
+    this.styleTag = container.querySelector(DYNAMIC_STYLES_SELECTOR)
+    this.styleTemplate = this.styleTag.innerHTML
+  }
 
-    fetch(`${options.baseUrl || '/images/seat-maps'}/${options.venue}.svg`)
-        .then(response => {
-            if (response.ok) {
-                return response.text()
-            }
-
-            throw new Error(response.statusText)
-        })
-        .then(svg => {
-            container.innerHTML = svg
-            styleTag = container.querySelector(DYNAMIC_STYLES_SELECTOR)
-            styleTemplate = styleTag.innerHTML
-            queue.start()
-        })
-
-    return {
-        highlight,
-        reset,
-    }
-}
-
-const createStyleTag = (template, highlightedSection) => {
+  highlight(highlightedSection) {
     const tag = document.createElement('style')
-
-    const content = template.replace(new RegExp(ACTIVE_SECTION_IDENTIFIER, 'g'), highlightedSection)
-
+    const content = this.styleTemplate.replace(new RegExp(ACTIVE_SECTION_IDENTIFIER, 'g'), highlightedSection)
     tag.appendChild(document.createTextNode(content))
-
-    return tag
+    this.styleTag.replaceWith(tag);
+    this.styleTag = tag;
+  }
 }
 
-const createQueue = () => {
-    let jobs = []
-    let started = false
-
-    const run = () => {
-        if (started === false) {
-            return
-        }
-
-        const job = jobs.pop()
-
-        if (job === undefined) {
-            return
-        }
-
-        job()
-    }
-
-    const enqueue = job => {
-        jobs = [job]
-    }
-
-    const start = () => {
-        started = true
-
-        run()
-    }
-
-    const push = job => {
-        enqueue(job)
-
-        run()
-    }
-
-    return {
-        push,
-        start,
-    }
+const createSeatMap = (options) => {
+    const container = document.querySelector(options.target)
+    return loadText(`${options.baseUrl || '/images/seat-maps'}/${options.venue}.svg`)
+      .then(content => new SeatMap(content, container))
 }
 
 export {
