@@ -40,20 +40,22 @@ A single highlighting...
     seatMapJS.create({
         target: '#seat-map',
         venue: seatMapJS.venues.rodLaver,
-    }).highlight(45)
+    }).then(seatMap => seatMap.highlight(45))
 </script>
 ```
 
 Multiple highlight commands...
 ```html
 <script>
-    var rodLaver = seatMapJS.create({
+    let rodLaver
+    seatMapJS.create({
         target: '#seat-map',
         venue: seatMapJS.venues.rodLaver,
+    }).then(seatMap => {
+        rodLaver = seatMap;
+        rodLaver.highlight(45);
     })
-
-    rodLaver.highlight(45)
-
+    
     button.addEventListener('click', function () {
         rodLaver.highlight(12)
     })
