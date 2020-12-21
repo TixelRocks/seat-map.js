@@ -40,6 +40,6 @@ const createSeatMap = (options) => {
 
 export {
     venues,
-    createSeatMap,
+    createSeatMap as create,
 }
 
