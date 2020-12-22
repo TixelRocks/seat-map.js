@@ -1,0 +1,60 @@
+<svg width="414" height="466" viewBox="0 0 414 466" fill="none" xmlns="http://www.w3.org/2000/svg" class="seat-map-js">
+    <defs>
+        <style id="seatmap-dynamic-styles">
+            .seat-map-js #section-ACTIVE_SECTION_IDENTIFIER-label {
+                fill: #482640;
+            }
+            .seat-map-js #section-ACTIVE_SECTION_IDENTIFIER-bg {
+                fill: #F17ED6;
+                stroke: #D971C1;
+            }
+        </style>
+        <style>
+            .seat-map-js * {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            }
+            .seat-map-js .section {
+                fill: #edf2f7;
+                stroke: #e2e8f0;
+            }
+            .seat-map-js .section-label {
+                fill: #333333;
+                font-size: 12px;
+            }
+            .seat-map-js #stage {
+                fill: #333;
+            }
+            .seat-map-js #stage-text {
+                font-weight: bold;
+                font-size: 20px;
+                fill: #fff;
+                letter-spacing: 0.02em;
+            }
+            .seat-map-js .disabled-section {
+                fill: #f7fafc;
+            }
+        </style>
+    </defs>
+<path class="section" id="stage" d="M169.63 2L133.762 79.1911C184.124 117.71 245.515 95.2407 269.915 79.1911L232.583 2H169.63Z"/>
+<path class="section" d="M89.475 175.107L130.102 86.8337L151.696 99.4442L140.35 124.283L130.102 145.3L118.023 158.293L107.775 185.806L89.475 175.107Z"/>
+<path class="section" d="M313.47 175.489L272.843 87.2159L251.249 99.8263L262.595 124.665L272.843 145.682L284.921 158.675L295.17 186.189L313.47 175.489Z"/>
+<path class="section" id="section-LAWN-1-10-1-bg" d="M18.4702 367.32L65.6848 284.015H190.492L150.232 367.32H18.4702Z"/>
+<path class="section" id="section-LAWN-1-10-2-bg" d="M2 392.159L14.4441 373.434H146.572L101.919 463.236H81.4229L60.5607 429.226H24.3263L2 392.159Z"/>
+<path class="section" id="section-LAWN-bg" d="M71.1748 277.901L102.651 230.898C184.929 286.843 268.207 255.992 299.561 233.573L329.574 277.901H71.1748Z"/>
+<path class="section" id="section-TERRACE-bg" d="M180.244 221.93C163.789 222.537 133.695 204.724 120.704 195.742L103.383 221.93C129.076 242.88 165.329 250.395 180.244 251.534C160.614 243.336 172.065 228.382 180.244 221.93Z"/>
+<path class="section" id="section-STALLS-bg" d="M148.768 123.519L131.932 195.742C193.127 226.924 250.883 208.734 272.111 195.742L253.079 123.519H148.768Z"/>
+<path class="section" id="section-LAWN-11-25-1-bg" d="M157.552 367.32L198.178 285.543H204.4L242.099 367.32H157.552Z"/>
+<path class="section" id="section-LAWN-11-25-2-bg" d="M289.313 464H111.069L154.258 374.198H247.223L289.313 464Z"/>
+<path class="section" id="section-LAWN-26-34-1-bg" d="M250.151 365.409L210.988 285.161H336.162L385.207 365.409H250.151Z"/>
+<path class="section" id="section-LAWN-26-34-2-bg" d="M297.365 464L253.811 373.434H390.331L411.925 413.558L376.422 464H297.365Z"/>
+<text class="section-label" style="fill:#fff; font-size:16px"><tspan x="175.992" y="58.6213">STAGE</tspan></text>
+<text class="section-label" id="section-STALLS-label"><tspan x="180.997" y="171.687">STALLS</tspan></text>
+<text class="section-label" id="section-TERRACE-label" transform="rotate(20)"><tspan x="184.036" y="170.064">TERRACE</tspan></text>
+<text class="section-label" id="section-LAWN-label"><tspan x="185.239" y="277.156">LAWN</tspan></text>
+<text class="section-label" id="section-LAWN-1-10-1-label" ><tspan x="84.9536" y="330.655">LAWN</tspan><tspan x="89.7876" y="344.655">1-10</tspan></text>
+<text class="section-label" id="section-LAWN-1-10-2-label" ><tspan x="64.4573" y="407.846">LAWN</tspan><tspan x="69.2913" y="421.846">1-10</tspan></text>
+<text class="section-label" id="section-LAWN-11-25-1-label"><tspan x="183.043" y="347.469">LAWN</tspan><tspan x="184.508" y="361.469">11-25</tspan></text>
+<text class="section-label" id="section-LAWN-11-25-2-label"><tspan x="182.311" y="408.61">LAWN</tspan><tspan x="183.776" y="422.61">11-25</tspan></text>
+<text class="section-label" id="section-LAWN-26-34-1-label"><tspan x="285.292" y="328.362">LAWN</tspan><tspan x="286.757" y="342.362">26-34</tspan></text>
+<text class="section-label" id="section-LAWN-26-34-2-label"><tspan x="307.484" y="405.553">LAWN</tspan><tspan x="308.949" y="419.553">26-34</tspan></text>
+</svg>
